@@ -7,68 +7,89 @@
     android:layout_height="match_parent"
     tools:context=".DiaryActivity">
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroupEmocoes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="72dp"
-        app:chipSpacing="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.416"
-        app:selectionRequired="false"
-        app:singleSelection="false">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipFeliz"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:checkable="true"
-            android:text="Feliz"
-            app:checkedIconVisible="true" />
+        <TextView
+            android:text="Como você está se sentindo?"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipTriste"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:checkable="true"
-            android:text="Triste"
-            app:checkedIconVisible="true" />
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupEmocoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="false"
+            app:chipSpacing="8dp">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipAnsioso"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:checkable="true"
-            android:text="Ansioso"
-            app:checkedIconVisible="true" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFeliz"
+                android:checkable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Feliz" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipEuforico"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:checkable="true"
-            android:text="Eufórico"
-            app:checkedIconVisible="true" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTriste"
+                android:checkable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Triste" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipRelaxado"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:checkable="true"
-            android:text="Relaxado"
-            app:checkedIconVisible="true" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipNervoso"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:checkable="true"
-            android:text="Nervoso"
-            app:checkedIconVisible="true" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAnsioso"
+                android:checkable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Ansioso" />
 
 
-    </com.google.android.material.chip.ChipGroup>
+        </com.google.android.material.chip.ChipGroup>
 
+        <TextView
+            android:text="Nota da sua semana (1-100)"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editNota"
+            android:layout_width="379dp"
+            android:layout_height="57dp"
+            android:inputType="number" />
+
+        <TextView
+            android:text="Quer explicar o motivo?"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editObservacao"
+            android:hint="Esse campo é opcional"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnSalvar"
+            android:text="Salvar entrada"
+            android:layout_marginTop="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
@@ -78,30 +99,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
-        android:layout_width="342dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="296dp"
-        android:hint="de 1 a 100 como foi seu dia?"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="267dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="16dp"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
-        android:text="Como você esta se sentindo hoje?"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.687"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
