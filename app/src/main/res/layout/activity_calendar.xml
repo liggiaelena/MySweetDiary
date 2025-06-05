@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".CalendarActivity">
 
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="@android:color/transparent"
+        app:mcv_tileWidth="48dp"
+        app:mcv_tileHeight="48dp"
+        />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
