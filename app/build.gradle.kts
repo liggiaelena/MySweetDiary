@@ -46,5 +46,6 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.android.material:material:1.11.0")
     implementation("com.github.prolificinteractive:material-calendarview:1.4.3")
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 
 }
