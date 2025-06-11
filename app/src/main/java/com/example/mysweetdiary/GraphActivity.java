@@ -111,7 +111,8 @@ public class GraphActivity extends AppCompatActivity {
         }
 
         PieDataSet dataSet = new PieDataSet(entries, "Humores");
-        dataSet.setColors(Color.rgb(244, 67, 54), Color.rgb(33, 150, 243), Color.rgb(76, 175, 80),
+        dataSet.setColors(Color.rgb(244, 67, 54), Color.rgb(33, 150, 243),
+                Color.rgb(76, 175, 80),
                 Color.rgb(255, 193, 7), Color.rgb(156, 39, 176));
 
         PieData pieData = new PieData(dataSet);

@@ -25,15 +25,12 @@ public class NotaDecodador implements DayViewDecorator {
 
     @Override
     public void decorate(DayViewFacade view) {
-        // Cria uma bolinha com cantos arredondados e fundo colorido
         GradientDrawable drawable = new GradientDrawable();
         drawable.setShape(GradientDrawable.RECTANGLE);
-        drawable.setCornerRadius(100); // faz virar um círculo
+        drawable.setCornerRadius(100);
         drawable.setColor(color);
 
         view.setBackgroundDrawable(drawable);
 
-        // Garante que o número do dia fique branco e visível
-//        view.addSpan(new ForegroundColorSpan(android.graphics.Color.WHITE));
     }
 }
